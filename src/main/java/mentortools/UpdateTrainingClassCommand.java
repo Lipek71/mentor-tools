@@ -11,7 +11,7 @@ import java.time.LocalDate;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class CreateTrainingClassCommand {
+public class UpdateTrainingClassCommand {
 
     @Schema(description = "Trainig class name", example = "Beginner Java programmer")
     @NotBlank(message = "Title can not be null or empty!")

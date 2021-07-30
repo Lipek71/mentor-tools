@@ -7,8 +7,11 @@ import org.modelmapper.ModelMapper;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
+import org.springframework.orm.jpa.JpaTransactionManager;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 @SpringBootApplication
+@EnableTransactionManagement
 public class MentorToolsApplication {
 
     public static void main(String[] args) {
@@ -32,5 +35,10 @@ public class MentorToolsApplication {
                         .title("Mentor Tools API")
                         .version("1.0.0")
                         .description("Mentor Tools Program"));
+    }
+
+    @Bean
+    public JpaTransactionManager transactionManager(){
+        return new JpaTransactionManager();
     }
 }
